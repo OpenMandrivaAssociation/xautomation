@@ -1,16 +1,15 @@
 Name:      xautomation
 Version:   1.03
-Release:   %mkrel 1
+Release:   2
 Summary:   Control X from the command line
 Group:     System/X11
 URL:       http://hoopajoo.net/projects/xautomation.html
 Source:    http://hoopajoo.net/static/projects/%{name}-%{version}.tar.gz
 License:   GPLv2
-BuildRoot: %{_tmppath}/%{name}-root
-
-BuildRequires: libx11-devel
-BuildRequires: libxtst-devel
+BuildRequires:  pkgconfig(x11)
+BuildRequires:  pkgconfig(xtst)
 BuildRequires: libpng-devel
+BuildRequires:  pkgconfig(xi)
 
 %description
 Control X from the command line for scripts, and do "visual scraping" to find
@@ -24,6 +23,7 @@ allowing progams to find buttons, etc, on the screen to click on.
 %setup -q
 
 %build
+export LDFLAGS="-lX11"
 %configure2_5x
 %make
 
@@ -51,3 +51,11 @@ rm -rf %{buildroot}
 %{_mandir}/man1/xmousepos.1*
 %{_mandir}/man1/xte.1*
 %{_mandir}/man7/xautomation.7*
+
+
+%changelog
+* Thu Nov 11 2010 Paulo Ricardo Zanoni <pzanoni@mandriva.com> 1.03-1mdv2011.0
++ Revision: 596133
+- import xautomation
+
+
