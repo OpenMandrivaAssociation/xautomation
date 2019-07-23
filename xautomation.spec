@@ -1,6 +1,6 @@
 Name:      xautomation
-Version:   1.03
-Release:   3
+Version:	1.09
+Release:	1
 Summary:   Control X from the command line
 Group:     System/X11
 URL:       http://hoopajoo.net/projects/xautomation.html
