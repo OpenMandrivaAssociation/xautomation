@@ -1,6 +1,6 @@
 Name:      xautomation
 Version:	1.09
-Release:	1
+Release:	2
 Summary:   Control X from the command line
 Group:     System/X11
 URL:       http://hoopajoo.net/projects/xautomation.html
@@ -8,7 +8,7 @@ Source:    http://hoopajoo.net/static/projects/%{name}-%{version}.tar.gz
 License:   GPLv2
 BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(xtst)
-BuildRequires: libpng-devel
+BuildRequires:  pkgconfig(libpng)
 BuildRequires:  pkgconfig(xi)
 
 %description
@@ -24,12 +24,12 @@ allowing progams to find buttons, etc, on the screen to click on.
 
 %build
 export LDFLAGS="-lX11"
-%configure2_5x
-%make
+%configure
+%make_build
 
 %install
 rm -rf %{buildroot}
-%makeinstall_std
+%make_install
 
 %clean
 rm -rf %{buildroot}
