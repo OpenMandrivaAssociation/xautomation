@@ -3,7 +3,7 @@ Version:	1.09
 Release:	2
 Summary:   Control X from the command line
 Group:     System/X11
-URL:       http://hoopajoo.net/projects/xautomation.html
+URL:       https://hoopajoo.net/projects/xautomation.html
 Source:    http://hoopajoo.net/static/projects/%{name}-%{version}.tar.gz
 License:   GPLv2
 BuildRequires:  pkgconfig(x11)
